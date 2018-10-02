@@ -7,7 +7,9 @@
     <title>Your events</title>
 </head>
 <body>
+<div class="base">
     <h1>Event list</h1>
+    <div class="block">
     <table>
         <tr>
             <th>Date</th>
@@ -22,7 +24,9 @@
             </tr>
         </#list>
     </table>
-
-<a href="/addEvent">CREATE NEW EVENT</a>
+    </div>
+<a href="/addEvent">Create new event</a>
+<a href="/">Back</a>
+</div>
 </body>
 </html>

@@ -7,18 +7,30 @@
     <title>CREATE YOUR FUTURE EVENT</title>
 </head>
 <body>
-
+<div class="base">
 <form name="event" action="/addEvent" method="post">
     <p>Date</p>
     <input class="editor" type="date" name="date">
-    <p>Event</p>
-    <input class="editor" type="text" name="event">
-    <p>Comments</p>
-    <input class="editor" type="text" name="comment">
+
+    <label for="inp" class="inp">
+    <input class="editor" id="inp" type="text" name="event" placeholder="&nbsp;" maxlength=254>
+    <span class="label">Event</span>
+        <span class="border"></span>
+    </label>
+
+    <label for="inp" class="inp">
+    <input class="editor" id="inp" type="text" name="comment" placeholder="&nbsp;" maxlength=254>
+    <span class="label">Comments</span>
+        <span class="border"></span>
+    </label>
+
+
     <br>
     <br>
     <input type="submit" value="OK">
 </form>
+    <a href="/">To start page</a>
+</div>
 
 </body>
 </html>
