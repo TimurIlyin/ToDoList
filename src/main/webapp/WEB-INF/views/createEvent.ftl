@@ -7,10 +7,16 @@
     <title>CREATE YOUR FUTURE EVENT</title>
 </head>
 <body>
+
 <div class="base">
-<form name="event" action="/addEvent" method="post">
+
+    <form name="event" action="/addEvent" method="post">
     <p>Date</p>
-    <input class="editor" type="date" name="date">
+    <input class="editor" type="date" name="date" id=now>
+
+    <script>
+        document.getElementById('now').value = new Date().toISOString().substring(0, 10);
+    </script>
 
     <label for="inp" class="inp">
     <input class="editor" id="inp" type="text" name="event" placeholder="&nbsp;" maxlength=254>
@@ -28,8 +34,11 @@
     <br>
     <br>
     <input type="submit" value="OK">
-</form>
+
+    </form>
+
     <a href="/">To start page</a>
+
 </div>
 
 </body>

@@ -70,7 +70,7 @@ td {
     left: 0;
     height: 2px;
     width: 100%;
-    background: black;
+    //background: black;
     transform: scaleX(0);
     transform-origin: 0 0;
     transition: all .15s ease;
