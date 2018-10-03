@@ -54,8 +54,8 @@
       <ObjectId>2200</ObjectId>
       <Comment>standard public schema</Comment>
       <Owner>newUser</Owner>
-      <IntrospectionTimestamp>2018-10-01.12:24:48.636</IntrospectionTimestamp>
-      <IntrospectionStateNumber>578</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2018-10-03.10:29:44.494</IntrospectionTimestamp>
+      <IntrospectionStateNumber>589</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -105,31 +105,64 @@
       <HandlerId>335</HandlerId>
       <Type>index</Type>
     </access-method>
-    <table id="18" parent="10" name="event">
+    <sequence id="18" parent="10" name="event_id_seq">
+      <ObjectId>16415</ObjectId>
+      <Owner>newUser</Owner>
+      <StateNumber>587</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+      <CacheSize>1</CacheSize>
+    </sequence>
+    <table id="19" parent="10" name="event">
       <ObjectId>16403</ObjectId>
       <Owner>newUser</Owner>
-      <StateNumber>575</StateNumber>
+      <StateNumber>587</StateNumber>
     </table>
-    <column id="19" parent="18" name="datevalue">
+    <column id="20" parent="19" name="datevalue">
       <Position>1</Position>
       <DataType>date|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>578</StateNumber>
       <TypeId>1082</TypeId>
     </column>
-    <column id="20" parent="18" name="eventname">
+    <column id="21" parent="19" name="eventname">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>571</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="21" parent="18" name="comment">
+    <column id="22" parent="19" name="comment">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>560</StateNumber>
       <TypeId>1043</TypeId>
     </column>
+    <column id="23" parent="19" name="id">
+      <Position>4</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>587</StateNumber>
+      <DefaultExpression>nextval(&apos;event_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+      <SequenceName>event_id_seq</SequenceName>
+    </column>
+    <index id="24" parent="19" name="event_id_uindex">
+      <ObjectId>16421</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="25" parent="19" name="event_pk">
+      <ObjectId>16422</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="26" parent="19" name="event_pk">
+      <ObjectId>16423</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>event_pk</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
   </database-model>
 </dataSource>

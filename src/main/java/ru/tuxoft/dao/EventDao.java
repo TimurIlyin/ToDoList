@@ -11,4 +11,6 @@ public interface EventDao {
     void save(Event event);
 
     List<Event> dailyRoutine();
+
+    void delete(int id);
 }

@@ -10,6 +10,7 @@ import java.sql.SQLException;
 public class EventMapper implements RowMapper<Event> {
     public Event mapRow(ResultSet resultSet, int i) throws SQLException {
         Event event = new Event();
+        event.setId(resultSet.getInt("id"));
         event.setDate(resultSet.getObject("datevalue", Date.class));
         event.setEvent(resultSet.getString("eventname"));
         event.setComment(resultSet.getString("comment"));

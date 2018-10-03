@@ -17,6 +17,10 @@ public class EventServiceImpl implements EventService{
         eventDao.save(event);
     }
 
+    public void delete(int id) {
+        eventDao.delete(id);
+    }
+
     public List<Event> findAll() {
         return eventDao.findAll();
     }

@@ -14,6 +14,12 @@ public class EventController {
     @Autowired
     public EventService eventService;
 
+    @GetMapping("/delete/{event}")
+    public String deleteEvent(@PathVariable("event") int id){
+        eventService.delete(id);
+        return "redirect:/events";
+    }
+
     @GetMapping("/")
     public String index(Model model) {
         model.addAttribute("events", eventService.dailyRoutine());

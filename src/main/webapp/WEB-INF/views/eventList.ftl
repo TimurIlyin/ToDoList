@@ -21,6 +21,7 @@
                 <td>${Event.date}</td>
                 <td>${Event.event}</td>
                 <td>${Event.comment}</td>
+                <td><a href="/delete/${Event.id}">Delete</a></td>
             </tr>
         </#list>
     </table>

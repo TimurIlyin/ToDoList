@@ -12,4 +12,5 @@ public interface EventService {
 
     List<Event> dailyRoutine();
 
+    void delete(int id);
 }

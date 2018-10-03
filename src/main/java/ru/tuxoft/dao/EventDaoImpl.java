@@ -19,8 +19,8 @@ public class EventDaoImpl implements EventDao {
     }
 
     public void save(Event event){
-        String sql = "INSERT INTO event (datevalue, eventname, comment) VALUES (?,?,?)";
-        jdbcTemplate.update(sql, event.getDate(), event.getEvent(), event.getComment());
+        String sql = "INSERT INTO event (datevalue, eventname, comment, id) VALUES (?,?,?,?)";
+        jdbcTemplate.update(sql, event.getDate(), event.getEvent(), event.getComment(), event.getId());
     }
 
     public List<Event> findAll() {
@@ -31,5 +31,10 @@ public class EventDaoImpl implements EventDao {
     public List<Event> dailyRoutine() {
         String sql = "SELECT * FROM event WHERE datevalue = current_date";
         return jdbcTemplate.query(sql, new EventMapper());
+    }
+
+    public void delete(int id) {
+        String sql = "DELETE FROM event WHERE id=?";
+        jdbcTemplate.update(sql, id);
     }
 }

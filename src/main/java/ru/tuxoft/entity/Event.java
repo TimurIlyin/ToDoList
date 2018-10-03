@@ -8,14 +8,24 @@ public class Event {
     private Date date;
     private String event;
     private String comment;
+    private int id;
 
     public Event() {
     }
 
-    public Event(Date date, String event, String comment) {
+    public Event(Date date, String event, String comment, int id) {
         this.date = date;
         this.event = event;
         this.comment = comment;
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public Date getDate() {
@@ -25,8 +35,6 @@ public class Event {
     public void setDate(Date date) {
         this.date = date;
     }
-
-
 
     public String getEvent() {
         return event;
